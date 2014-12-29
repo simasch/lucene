@@ -1,5 +1,4 @@
 
-import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -18,7 +17,7 @@ public class Indexer {
     public static void main(String[] args) throws IOException, ParseException {
         StandardAnalyzer analyzer = new StandardAnalyzer();
 
-        Directory index = new SimpleFSDirectory(new File("/Users/simon/temp/search.index"));
+        Directory index = new SimpleFSDirectory(Constants.indexLocation);
 
         IndexWriterConfig config = new IndexWriterConfig(Version.LATEST, analyzer);
 
